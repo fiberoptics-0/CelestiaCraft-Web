@@ -13,7 +13,7 @@ jobs:
       - name: Deploy via Rsync
         uses: Burnett01/rsync-deployments@7.0.1
         with:
-          switches: -avz --delete --exclude='.git*' --exclude='.vscode'
+          switches: -vzrt --delete --exclude='.git*' --exclude='.vscode'
           path: ./
           remote_path: /var/www/html/
           remote_host: ${{ secrets.SERVER_IP }}
